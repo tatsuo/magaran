@@ -6,4 +6,10 @@
   <div><%= submit_tag 'Save' %></div>
 <% end -%>
 
-<%= select("post", "magazine_id", Magazine.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
+<div>
+  <%= select("post", "magazine_id", Magazine.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
+ </div>
+
+<div>
+  <%= collection_select(:post, :magazine_id, Magazine.all, :id, :name, prompt: true) %>
+</div>
