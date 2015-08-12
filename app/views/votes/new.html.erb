@@ -1,0 +1,9 @@
+<h1>Votes#new</h1>
+<p>投票だー</p>
+
+<%= form_tag('/posts') do -%>
+  <div><%= select("post", "magazine_id", Magazine.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %></div>
+  <div><%= submit_tag 'Save' %></div>
+<% end -%>
+
+<%= select("post", "magazine_id", Magazine.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
