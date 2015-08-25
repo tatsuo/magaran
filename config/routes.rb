@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'votes/new'
+  get 'magazine/:magazine_id/votes/new', controller: :votes, action: :new
 
   resources :magazines
   # The priority is based upon order of creation: first created -> highest priority.

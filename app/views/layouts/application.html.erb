@@ -2,13 +2,25 @@
 <html>
 <head>
   <title>Magaran</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div data-role="page">
+    <div data-role="header">
+      <header>
+        <h1><a href="/">マガラン</a></h1>
+        <button class="header-navbtn fa fa-bars"><span class="offleft">メニューを開く</span></button>
+      </header>
+    </div>
+    <div role="main" class="ui-content">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
