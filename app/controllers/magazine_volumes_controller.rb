@@ -5,11 +5,13 @@ class MagazineVolumesController < ApplicationController
   # GET /magazine_volumes.json
   def index
     @magazine_volumes = MagazineVolume.all
+   
   end
 
   # GET /magazine_volumes/1
   # GET /magazine_volumes/1.json
   def show
+    @comic_chapters = ComicChapter.where(magazine_volume_id: @magazine_volume.id)
   end
 
   # GET /magazine_volumes/new

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @comic_chapter.number %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @comic_chapter.subtitle %>
+</p>
+
+<p>
+  <strong>Total point:</strong>
+  <%= @comic_chapter.total_point %>
+</p>
+
+<%= link_to 'Edit', edit_comic_chapter_path(@comic_chapter) %> |
+<%= link_to 'Back', comic_chapters_path %>

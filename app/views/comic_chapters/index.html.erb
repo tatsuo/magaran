@@ -1,27 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Magazine:</strong>
-  <%= Magazine.all.find_by(id: @magazine_volume.magazine_id).name %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @magazine_volume.number %>
-</p>
-
-<p>
-  <strong>Published:</strong>
-  <%= @magazine_volume.published %>
-</p>
-
-<%= link_to 'Edit', edit_magazine_volume_path(@magazine_volume) %> |
-<%= link_to 'Back', magazine_volumes_path %>
+<h1>Listing Comic Chapters</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
       <th>Number</th>
       <th>Subtitle</th>
       <th>Total point</th>
@@ -32,7 +15,6 @@
   <tbody>
     <% @comic_chapters.each do |comic_chapter| %>
       <tr>
-        <td><%= Comic.find(magazine_volume.magazine_id).name %></td>
         <td><%= comic_chapter.number %></td>
         <td><%= comic_chapter.subtitle %></td>
         <td><%= comic_chapter.total_point %></td>
@@ -43,3 +25,7 @@
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'New Comic chapter', new_comic_chapter_path %>

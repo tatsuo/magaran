@@ -1,0 +1,35 @@
+<%= form_for(@comic_chapter) do |f| %>
+  <% if @comic_chapter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comic_chapter.errors.count, "error") %> prohibited this comic_chapter from being saved:</h2>
+
+      <ul>
+      <% @comic_chapter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    
+  <div class="field">
+    <%= f.label :comic_id %><br>
+    <%= f.collection_select(:comic_id, Comic.all, :id, :title, prompt: true) %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :subtitle %><br>
+    <%= f.text_field :subtitle %>
+  </div>
+  <div class="field">
+    <%= f.label :total_point %><br>
+    <%= f.number_field :total_point %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

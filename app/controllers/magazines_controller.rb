@@ -10,6 +10,8 @@ class MagazinesController < ApplicationController
   # GET /magazines/1
   # GET /magazines/1.json
   def show
+    @magazine_volumes = MagazineVolume.where({magazine_id: @magazine.id})
+    
   end
 
   # GET /magazines/new
