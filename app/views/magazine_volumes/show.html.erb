@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Magazine:</strong>
+  <%= Magazine.all.find_by(id: @magazine_volume.magazine_id).name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @magazine_volume.number %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @magazine_volume.published %>
+</p>
+
+<%= link_to 'Edit', edit_magazine_volume_path(@magazine_volume) %> |
+<%= link_to 'Back', magazine_volumes_path %>

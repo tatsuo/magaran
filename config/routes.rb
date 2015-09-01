@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :magazine_volumes
   get 'votes/new'
   get 'magazine/:magazine_id/votes/new', controller: :votes, action: :new
 
