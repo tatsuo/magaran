@@ -2,7 +2,7 @@
 
 <p>
   <strong>Title:</strong>
-  <%= Comic.find(@comic_chapter.comic_id).title %>
+  <%= link_to Comic.find(@comic_chapter.comic_id).title, comic_path(@comic_chapter.comic_id) %>
 </p>
 
 <p>
