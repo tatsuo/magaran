@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Title:</strong>
+  <%= Comic.find(@comic_chapter.comic_id).title %>
+</p>
+
+<p>
   <strong>Number:</strong>
   <%= @comic_chapter.number %>
 </p>

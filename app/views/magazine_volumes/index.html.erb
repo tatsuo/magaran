@@ -15,7 +15,7 @@
   <tbody>
     <% @magazine_volumes.each do |magazine_volume| %>
       <tr>
-        <td><%= Magazine.all.find_by(id: magazine_volume.magazine_id).name %></td>
+        <td><%= Magazine.find(magazine_volume.magazine_id).name %></td>
         <td><%= magazine_volume.number %></td>
         <td><%= magazine_volume.published %></td>
         <td><%= link_to 'Show', magazine_volume %></td>
