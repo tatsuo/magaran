@@ -10,6 +10,7 @@ class ComicsController < ApplicationController
   # GET /comics/1
   # GET /comics/1.json
   def show
+    @comic_chapters = @comic.comic_chapters
   end
 
   # GET /comics/new
