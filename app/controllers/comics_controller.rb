@@ -42,6 +42,7 @@ class ComicsController < ApplicationController
   # PATCH/PUT /comics/1.json
   def update
     respond_to do |format|
+      binding.pry
       if @comic.update(comic_params)
         format.html { redirect_to @comic, notice: 'Comic was successfully updated.' }
         format.json { render :show, status: :ok, location: @comic }
@@ -70,6 +71,6 @@ class ComicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comic_params
-      params.require(:comic).permit(:title, :author, :score)
+      params.require(:comic).permit(:title, :author, :score, carriages: [:magazine_id])
     end
 end
